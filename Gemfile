@@ -40,6 +40,7 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'figaro'
+  gem 'launchy'
 end
 
 group :development do
