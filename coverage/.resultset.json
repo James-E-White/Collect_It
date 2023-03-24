@@ -287,20 +287,37 @@
       },
       "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/comic.rb": {
         "lines": [
-
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
         ]
       },
       "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/action_figure.rb": {
         "lines": [
-
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
         ]
       },
       "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/manga.rb": {
         "lines": [
-
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
         ]
       }
     },
-    "timestamp": 1679592727
+    "timestamp": 1679668546
   }
 }
