@@ -251,6 +251,8 @@
       "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/config/routes.rb": {
         "lines": [
           1,
+          1,
+          1,
           null,
           null
         ]
@@ -258,6 +260,113 @@
       "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/helpers/user_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/spec/models/action_figures_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/action_figure.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/spec/models/comics_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/comic.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/spec/models/manga_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/spec/models/users_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
           null
         ]
       },
@@ -278,31 +387,43 @@
           null
         ]
       },
-      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/application_record.rb": {
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/spec/requests/user_spec.rb": {
         "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/comic.rb": {
-        "lines": [
-          1,
           1,
           null,
           1,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/action_figure.rb": {
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/spec/views/user/index.html.erb_spec.rb": {
         "lines": [
           1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/spec/views/user/show.html.erb_spec.rb": {
+        "lines": [
           1,
           null,
-          1,
-          1,
+          null,
+          null,
           null
         ]
       },
@@ -318,6 +439,6 @@
         ]
       }
     },
-    "timestamp": 1679668546
+    "timestamp": 1679692545
   }
 }
