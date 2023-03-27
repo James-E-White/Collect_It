@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ActionFigures, type: :model do
+RSpec.describe ActionFigure, type: :model do
   describe 'relationships' do
     it { should belong_to :user }
   end

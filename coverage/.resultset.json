@@ -251,6 +251,12 @@
       "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/config/routes.rb": {
         "lines": [
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -258,6 +264,51 @@
       "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/helpers/user_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          4,
+          null,
+          null,
           null
         ]
       },
@@ -284,40 +335,8 @@
           1,
           null
         ]
-      },
-      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/comic.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/action_figure.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/models/manga.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1679668546
+    "timestamp": 1679939376
   }
 }
