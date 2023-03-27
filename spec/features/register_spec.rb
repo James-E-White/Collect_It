@@ -13,6 +13,7 @@ RSpec.describe ' User registration page' do
       expect(page).to have_field(:username)
       expect(page).to have_field(:email)
       expect(page).to have_field(:password)
+      save_and_open_page
       expect(page).to have_button('Create New User')
     end
   end
