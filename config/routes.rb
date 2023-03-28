@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[create show] do
    
   end
+  get '/welcome', to: 'welcome#index'
+  post 'welcome', to: 'users#new'
   get "/", to: 'users#new'
   get 'user/show'
   get 'user/index'
