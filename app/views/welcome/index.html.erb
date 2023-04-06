@@ -1,2 +1,16 @@
-<h1>Welcome to Collect It</h1>
-<%= button_to "Create A New User" %>
+<h1><% "Welcome to Collect It" %></h1>
+<% if session[:user_id] %>
+  <%= link_to "Log Out", "/logout" %>
+
+  <div id='users'>
+    <h2>Existing Users:</h2>
+    <ul>
+      <% @users.each do |user| %>
+        <li><b>Name:</b> <%= user.username %><br><b>Email:</b> <%= user.email %> </li><br>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <%= button_to "Create A New User", register_path, method: :get %>
+  <%= button_to "Log In", "/login" %>
+<% end %>
