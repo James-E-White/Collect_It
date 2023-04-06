@@ -1,4 +1,5 @@
 require 'rails_helper'
+include Capybara::DSL
 
 RSpec.describe ' User registration page' do
   describe "when a user visits '/welcome' page" do
@@ -31,8 +32,8 @@ RSpec.describe ' User registration page' do
     end
   end
    it "doesn't allow you to leave fields blank" do
-      visit "/"
-      fill_in(:username, with: 'James')
+      visit '/register'
+      fill_in(:Username, with: 'James')
       click_button('Create a New User')
 
       expect(current_path).to eq("/")

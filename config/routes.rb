@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   end
   get '/register', to: 'users#new'
   get '/', to: 'welcome#index'
-  post '/', to: 'users#new'
-  get "/register", to: 'users#new'
+  #post '/', to: 'users#new'
+ 
   get 'users/show'
-  get 'users/#{user.id}', to: 'users#index'
-  get 'users/#{user.id}/discover', to: 'comics#discover'
+  get 'users/:id', to: 'users#index'
+  get 'users/:id/discover', to: 'comics#discover'
+  get 'users/:id/comics', to: 'comics#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
