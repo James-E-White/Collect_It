@@ -7,7 +7,7 @@ RSpec.describe 'Discover Comics Page' do
 
            visit "/users/#{user_1.id}/discover"
            click_button 'Find your Comics' 
-           expect(current_path).to eq("/users/#{user_1.id}/comics")
+           expect(current_path).to eq("/users/#{user_1.id}/discover")
         end
     end
 end
