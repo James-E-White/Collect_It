@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ' User registration page' do
   describe "when a user visits '/welcome' page" do
     it 'shows a form to register, once registered they are redirected to the user show page' do
-      visit "/welcome"
+      visit "/"
 
       expect(page).to_not have_content('james@turing.edu')
        
