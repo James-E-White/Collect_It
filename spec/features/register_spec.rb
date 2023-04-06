@@ -33,7 +33,7 @@ RSpec.describe ' User registration page' do
    it "doesn't allow you to leave fields blank" do
       visit "/"
       fill_in(:username, with: 'James')
-      click_button('Create New User')
+      click_button('Create a New User')
 
       expect(current_path).to eq("/")
       within '#flash-messages' do
