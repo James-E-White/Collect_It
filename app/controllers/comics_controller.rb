@@ -3,5 +3,9 @@ class ComicsController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    
+    def index
+        
+    end
+
+
 end
