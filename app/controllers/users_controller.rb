@@ -4,12 +4,12 @@ class UsersController < ApplicationController
 
 
   def create
-    user = User.create(app_params)
-    if user.valid?
-      flash[:success] = "Welcome, #{user.username}"
-      redirect_to user_path(user)
+    @user = User.new(app_params)
+    if @user.save
+      flash[:success] = "Welcome, #{@user.username}"
+      redirect_to user_path(@user)
     else
-      flash[:alert] = "Error: #{error_message(user.errors)}"
+      flash[:alert] = "Error: #{error_message(@user.errors)}"
       redirect_to "/"
     end
   end
@@ -23,7 +23,9 @@ class UsersController < ApplicationController
     end
   end
 
-    def login_user
+  
+
+  def login_user
     user = User.find_by(email: params[:email])
     if user &&
        if user.authenticate(params[:password])
