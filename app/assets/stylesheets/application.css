@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+ body {
+ background-image: url('Mixed-Comics_1024x1024@2x.jpg');
+ }
