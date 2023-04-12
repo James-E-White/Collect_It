@@ -6,7 +6,7 @@ RSpec.describe "the User Show page aka the user's dashboard" do
       @user_1 = User.create!(username: 'James', email: 'james@turing.edu', password: 'james',
                             password_confirmation: 'james')
     visit "users/user.id"
-    save_and_open_page
+    
     end
   end
 end
