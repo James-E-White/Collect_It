@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  resources :users, only: %i[create show index] do
+  resources :users, only: %i[create show index login] do
    
   end
+
   get '/register', to: 'users#new'
+  post '/welcome', to: 'welcome#index'
   get '/', to: 'welcome#index'
-  #post '/', to: 'users#new'
- 
-  #post '/dashboard', to: 'users/show'
-  post '/login', to: 'users#show'
-  post '/users/:id', to: 'users#show'
+  post '/', to: 'users#new'
+  get '/dashboard', to: 'users#show'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
+  #post '/users/:id', to: 'users#show'
   get '/users/:id', to: 'users#index'
   get '/users/:id/discover', to: 'comics#discover'
   post '/users/:id/discover', to: 'comics#discover'

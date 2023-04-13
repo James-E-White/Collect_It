@@ -3,9 +3,9 @@
 <style>
 div { 
   background-color: lightgrey;
-  width: 300px;
-  border: 15px solid purple;
-  padding: 50px;
+  width: 500px;
+  border: 50px solid orange;
+  padding: 20px;
   margin: auto;
 }
 </style>
@@ -17,19 +17,8 @@ div {
 </div>
 </center>
 
-<% if session[:user_id] %>
-  <%= link_to "Log Out", "/logout" %>
 
-  <div id='users'>
-    <h2>Existing Users:</h2>
-    <ul>
-      <% @users.each do |user| %>
-        <li><b>Name:</b> <%= user.username %><br><b>Email:</b> <%= user.email %> </li><br>
-      <% end %>
-    </ul>
-  </div>
-<% else %>
   <%= button_to "Create A New User", register_path, method: :get %>
   <%= button_to "Log In", "/login" %>
-<% end %>
+
 </html>
