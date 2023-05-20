@@ -16,3 +16,7 @@
  body {
  background-image: url('Mixed-Comics_1024x1024@2x.jpg');
  }
+
+ .highlight {
+     background-color: rgb(170, 170, 159);
+ }
