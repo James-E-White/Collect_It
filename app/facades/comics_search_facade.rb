@@ -13,7 +13,7 @@ class ComicsSearchFacade
   end
 
   def comics_keyword
-    service.comics_keyword(@query_params)[:results].map do |data|
+    service.search_comics(@query_params)[:results].map do |data|
       Comic.new(data)
     end
   end

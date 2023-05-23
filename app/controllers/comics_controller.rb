@@ -1,13 +1,16 @@
 class ComicsController < ApplicationController
     def discover
-        @comics = Comic.search(params[:query])
+        @facade = ComicsSearchFacade.new(params[:id], params[:query])
+        @comics = @facade.comics_keyword
     end
 
-  def index
-    @facade = ComicsSearchFacade.new(params[:id], params[:q])
-    if @facade.query_params == ""
+  def search
+    @facade = ComicsSearchFacade.new(params[:id], params[:query])
+    if @facade.query_params.blank?
       flash[:alert] = "Error: You must provide a query"
-      redirect_to "/users/#{@facade.user_id}/discover"
+      redirect_to discover_comics_path(@facade.user_id)
+    else
+      @comics = @facade.comics_keyword
     end
   end
 
