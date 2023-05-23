@@ -1,4 +1,4 @@
-class ComicsSearchFacade
+class ComicsFacade
   attr_reader :user_id, :query_params 
 
   def initialize(user_id, query_params)

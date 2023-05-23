@@ -3,9 +3,9 @@
 <center>
   <h2>Discover Comics</h2>
   <br><br>
-  <%= button_to "Discover Comics", search_comics_path(@facade.user_id), method: :post %>
+  <%= button_to "Discover Comics", user_comics_path(@facade.user_id), method: :post %>
   <br>
-  <%= form_with url: search_comics_path(@facade.user_id), method: :post, local: true do |form| %>
+  <%= form_with url: user_comics_path(@facade.user_id), method: :post, local: true do |form| %>
     <%= form.text_field :query, placeholder: "Search Comics" %>
     <%= form.submit 'Find Comics' %>
   <% end %>
