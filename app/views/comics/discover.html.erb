@@ -1,8 +1,17 @@
-<h1>Discover Comics</h1><br>
+<h1>Discover Comics</h1>
 
-<%= form_with url: "/users/#{@user.id}/comics", method: :get, local: true do |form| %>
-<%= form.text_field :"q", placeholder: "Find your Comics" %>
-<%= form.submit :'Find Comics' %>
-<% end %>
+<center>
+  <h2>Discover Comics</h2>
+  <br><br>
+  <%= button_to "Discover Comics", search_comics_path(@facade.user_id), method: :post %>
+  <br>
+  <%= form_with url: search_comics_path(@facade.user_id), method: :post, local: true do |form| %>
+    <%= form.text_field :query, placeholder: "Search Comics" %>
+    <%= form.submit 'Find Comics' %>
+  <% end %>
+</center>
+
+
+
 
 
