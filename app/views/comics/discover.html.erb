@@ -1,8 +1,19 @@
 <h1>Discover Comics</h1><br>
 
-<%= form_with url: "/users/#{@user.id}/comics", method: :get, local: true do |form| %>
+<%= form_with url: "/dashboard/comics", method: :get, local: true do |form| %>
 <%= form.text_field :"q", placeholder: "Find your Comics" %>
 <%= form.submit :'Find Comics' %>
+
+
+<% if @comics.present? %>
+  <ul>
+    <% @comics.each do |comic| %>
+      <li><%= comic.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No comics found.</p>
+<% end %>
 <% end %>
 
 

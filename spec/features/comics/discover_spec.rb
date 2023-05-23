@@ -11,7 +11,7 @@ RSpec.describe 'Discover Comics Page' do
            expect(page).to have_field("q")
            click_button 'Find Comics' 
            expect(current_path).to eq("/users/#{user_1.id}/comics")
-          
+          save_and_open_page
           
         end
 

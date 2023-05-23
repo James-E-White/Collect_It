@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   def new; end
 
-
-
   def create
     @user = User.new(app_params)
     if @user.save
@@ -10,35 +8,27 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:alert] = "Error: #{error_message(@user.errors)}"
-      redirect_to "/"
+      redirect_to '/'
     end
   end
 
   def show
-    if session[:user_id]
+    if logged_in?
       @user = User.find(session[:user_id])
     else
-      flash[:alert] = "Error You must be logged in or registered to access my dashboard"
-      redirect_to "/"
+      flash[:alert] = 'Error You must be logged in or registered to access my dashboard'
+      redirect_to '/'
     end
   end
 
-  
-
   def login_user
     user = User.find_by(email: params[:email])
-    if user &&
-       if user.authenticate(params[:password])
-         session[:user_id] = user.id
-         redirect_to '/dashboard'
-
-       else
-         redirect_to '/login'
-         (flash[:alert] = 'Incorrect Password')
-       end
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to '/dashboard'
     else
       redirect_to '/login'
-      flash[:alert] = 'Incorrect Email entered'
+      (flash[:alert] = 'Incorrect Email or Password')
     end
   end
 
