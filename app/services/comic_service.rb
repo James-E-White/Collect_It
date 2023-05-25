@@ -9,11 +9,16 @@ class ComicService
     get_url(url)
   end
 
-  def search_comics(query)
-    api_key = ENV['comic_vine_api']
-    url = "/search/?api_key=#{api_key}&format=json&resources=issue&query=#{URI.encode(query)}"
-    get_url(url)
-  end
+def search_comics(query)
+  api_key = ENV['comic_vine_api']
+  url = "/search/?api_key=#{api_key}&format=json&resources=issue"
+  url += "&query=#{URI.encode(query)}" if query.present?
+  
+  response = get_url(url)
+  puts response.inspect # Add this line for debug output
+  
+  response
+end
 
   private
 

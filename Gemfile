@@ -41,6 +41,7 @@ group :development, :test do
   gem 'vcr'
   gem 'figaro'
   gem 'launchy'
+  gem 'devise'
 end
 
 group :development do
