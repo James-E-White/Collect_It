@@ -13,7 +13,11 @@ def search_comics(query)
   api_key = ENV['comic_vine_api']
   url = "/search/?api_key=#{api_key}&format=json&resources=issue"
   url += "&query=#{URI.encode(query)}" if query.present?
-  get_url(url)
+  
+  response = get_url(url)
+  puts response.inspect # Add this line for debug output
+  
+  response
 end
 
   private

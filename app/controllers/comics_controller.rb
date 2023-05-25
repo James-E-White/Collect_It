@@ -12,6 +12,7 @@ end
       redirect_to user_discover_comics_path(id: @facade.user_id)
     else
       @comics = @facade.comics_keyword
+      render 'comics/index'
     end
   end
 
