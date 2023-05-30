@@ -9,13 +9,6 @@ resources :users, only: %i[create show index login] do
   end
 end
 
-
-
-
-
-
-
-
 get '/register', to: 'users#new'
 post '/welcome', to: 'welcome#index'
 get '/', to: 'welcome#index'
@@ -28,7 +21,5 @@ get '/users/:id', to: 'users#index'
 get '/users/:id/discover/comics', to: 'comics#discover', as: 'user_discover_comics'
 get '/users/:id/discover/search', to: 'comics#search', as: 'user_dashboard_search'
 get '/users/:id/comics', to: 'comics#index'
-
-# get '/comics/discover', to: 'comics#discover'
 
 end

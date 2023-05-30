@@ -1,4 +1,15 @@
+<h2>Search Comics</h2>
+<%= form_with url: search_user_comics_user_comics_path(current_user.id), method: :get, local: true do |form| %>
+  <%= form.text_field :query, placeholder: "Search Comics" %>
+  <%= form.submit 'Find Comics' %>
+<% end %>
+
+
+
+
+
 <h2>Search Results</h2>
+
 <% if @comics.present? %>
   <ul>
     <% @comics.each do |comic| %>
