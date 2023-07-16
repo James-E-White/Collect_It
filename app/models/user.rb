@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :comics
+  has_many :user_comics
+  has_many :comics, through: :user_comics
+
   has_many :action_figures
   has_many :manga
 

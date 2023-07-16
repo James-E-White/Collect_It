@@ -1,5 +1,6 @@
 class Comic < ApplicationRecord
-  belongs_to :user
+  has_many :user_comics
+  has_many :users, through: :user_comics
   attribute :site_detail_url, :string
   attribute :resource_type, :string
   attribute :store_date, :date
@@ -11,9 +12,8 @@ class Comic < ApplicationRecord
   serialize :image, JSON
 
   def image_url
-    self.image["medium_url"] if self.image.present?
+    image['medium_url'] if image.present?
   end
-
 
   def self.search(query)
     if query.present?
