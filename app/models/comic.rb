@@ -1,4 +1,5 @@
 class Comic < ApplicationRecord
+  belongs_to :user
   has_many :user_comics
   has_many :users, through: :user_comics
   attribute :site_detail_url, :string
@@ -6,6 +7,7 @@ class Comic < ApplicationRecord
   attribute :store_date, :date
   attribute :image, :string
   attribute :volume, :string
+  attribute :issue
   validates_presence_of :name
   validates_presence_of :issue
   validates_presence_of :publisher
