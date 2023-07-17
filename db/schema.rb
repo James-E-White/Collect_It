@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_25_164323) do
+ActiveRecord::Schema.define(version: 2023_07_16_221927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2023_05_25_164323) do
 
   create_table "comics", force: :cascade do |t|
     t.string "name"
+    t.json "image"
     t.float "issue_number"
     t.string "publisher"
     t.bigint "user_id", null: false
@@ -36,9 +37,15 @@ ActiveRecord::Schema.define(version: 2023_05_25_164323) do
     t.text "description"
     t.boolean "has_staff_review"
     t.text "associated_images"
-    t.string "image"
     t.string "volume"
     t.index ["user_id"], name: "index_comics_on_user_id"
+  end
+
+  create_table "comics_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "comic_id", null: false
+    t.index ["comic_id", "user_id"], name: "index_comics_users_on_comic_id_and_user_id"
+    t.index ["user_id", "comic_id"], name: "index_comics_users_on_user_id_and_comic_id"
   end
 
   create_table "mangas", force: :cascade do |t|
