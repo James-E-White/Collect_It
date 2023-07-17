@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   post 'discover/search', to: 'comics#search', as: 'search_comics_post'
-
+  match '/logout', to: 'users#logout_user', via: [:get, :post], as: 'logout'
   get '/register', to: 'users#new'
   post '/welcome', to: 'welcome#index'
   get '/', to: 'welcome#index'

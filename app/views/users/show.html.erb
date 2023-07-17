@@ -4,5 +4,6 @@
     <%= form.text_field :query, placeholder: "Search Comics" %>
     <%= form.submit 'Find Comics' %>
   <% end %>
+  <%= link_to 'Log Out', logout_path, method: :post %>
 <% end %>
 

@@ -2,20 +2,20 @@ class UsersController < ApplicationController
   def new; end
 
   def create
-    @user = User.new(app_params)
+    @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome, #{@user.username}"
       redirect_to user_path(@user)
     else
       flash[:alert] = "Error: #{error_message(@user.errors)}"
-      redirect_to '/'
+      redirect_to '/register'
     end
   end
 
  def show
   @facade = ComicsFacade.new(params[:id], params[:query])
   if logged_in?
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(params[:id])
     if @user.nil?
       flash[:alert] = 'Error: User not found'
       redirect_to '/'
@@ -33,8 +33,8 @@ end
       session[:user_id] = user.id
       redirect_to '/dashboard'
     else
+      flash[:alert] = 'Incorrect Email or Password'
       redirect_to '/login'
-      (flash[:alert] = 'Incorrect Email or Password')
     end
   end
 
@@ -45,7 +45,7 @@ end
 
   private
 
-  def app_params
+  def user_params
     params.permit(:username, :email, :password, :password_confirmation)
   end
 end
