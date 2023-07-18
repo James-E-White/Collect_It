@@ -12,20 +12,19 @@ class UsersController < ApplicationController
     end
   end
 
- def show
-  @facade = ComicsFacade.new(params[:id], params[:query])
-  if logged_in?
-    @user = User.find_by(params[:id])
-    if @user.nil?
-      flash[:alert] = 'Error: User not found'
+  def show
+    @facade = ComicsFacade.new(params[:id], params[:query])
+    if logged_in?
+      @user = User.find_by(params[:id])
+      if @user.nil?
+        flash[:alert] = 'Error: User not found'
+        redirect_to '/'
+      end
+    else
+      flash[:alert] = 'Error: You must be logged in or registered to access my dashboard'
       redirect_to '/'
     end
-  else
-    flash[:alert] = 'Error: You must be logged in or registered to access my dashboard'
-    redirect_to '/'
   end
-end
-
 
   def login_user
     user = User.find_by(email: params[:email])
@@ -41,6 +40,17 @@ end
   def logout_user
     reset_session
     redirect_to '/'
+  end
+
+  def add_to_collection
+    @comic = Comic.find_by(id: params[:id])
+    if @comic
+      @user = current_user
+      @user.comics << @comic
+      redirect_to '/comics', notice: 'Comic added to your collection'
+    else
+      redirect_to '/comics', alert: 'Comic not found'
+    end
   end
 
   private

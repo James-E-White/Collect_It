@@ -1,7 +1,10 @@
 class ComicsController < ApplicationController
+  include Rails.application.routes.url_helpers
   def index
-    @user = current_user 
+    @user = current_user
     @comics = Comic.all
+    logger.debug @comics.inspect
+    render 'index'
   end
 
   def discover
@@ -19,20 +22,14 @@ class ComicsController < ApplicationController
     @facade = ComicDetailsFacade.new(params[:user_id], params[:id])
   end
 
-  def add_to_collection
-    @comic = Comic.find(params[:id])
-    current_user.comics << @comic
-    redirect_to comics_path, notice: 'Comic added to your collection'
-  end
+  # def add_to_collection
+  #   @comic = Comic.find_by(id: params[:id])
+  #   if @comic
+  #     @user = current_user
+  #     @user.comics << @comic
+  #     redirect_to '/comics', notice: 'Comic added to your collection'
+  #   else
+  #     redirect_to '/comics', alert: 'Comic not found'
+  #   end
+  # end
 end
-
-#  def search
-#     @facade = ComicsFacade.new(params[:id], params[:query])
-#     if @facade.query_params.blank?
-#       flash[:alert] = 'Error: You must provide a query'
-#       redirect_to user_discover_comics_path(id: @facade.user_id)
-#     else
-#       @comics = @facade.comics_keyword
-#       render 'comics/index'
-#     end
-#   end

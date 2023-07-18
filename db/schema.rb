@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_16_221927) do
+ActiveRecord::Schema.define(version: 2023_07_18_163448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2023_07_16_221927) do
     t.boolean "has_staff_review"
     t.text "associated_images"
     t.string "volume"
+    t.string "comic_vine_id"
+    t.index ["comic_vine_id"], name: "index_comics_on_comic_vine_id"
     t.index ["user_id"], name: "index_comics_on_user_id"
   end
 

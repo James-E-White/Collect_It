@@ -15,7 +15,7 @@ def search_comics(query)
   url += "&query=#{URI.encode(query)}" if query.present?
   
   response = get_url(url)
-  puts response.inspect # Add this line for debug output
+  puts response.inspect 
   
   response
 end
