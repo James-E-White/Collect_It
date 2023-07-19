@@ -4,18 +4,20 @@ Rails.application.routes.draw do
       get 'login'
     end
 
-    resources :comics, only: [:index] do
-      member do
-        post 'add_to_collection', to: 'users#add_to_collection', as: 'add_to_collection'
-      end
+    member do
+      get 'discover', to: 'comics#discover', as: 'user_discover_comics'
+    end
 
-      collection do
-        get 'search', to: 'comics#search', as: 'search_user_comics'
-      end
+    resources :comics do
+      post 'add_to_collection', on: :member
     end
   end
- 
-  get '/comics', to: 'comics#index'
+
+  resources :comics, only: [:index, :search] do
+    member do
+      post 'add_to_collection', to: 'comics#add_to_collection', as: 'add_to_collection'
+    end
+  end
 
   post 'discover/search', to: 'comics#search', as: 'search_comics_post'
   match '/logout', to: 'users#logout_user', via: [:get, :post], as: 'logout'

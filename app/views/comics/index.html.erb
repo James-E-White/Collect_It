@@ -1,12 +1,8 @@
 <h2>Search Comics</h2>
-<%= form_with url: search_user_comics_user_comics_path(current_user.id), method: :get, local: true do |form| %>
+<%= form_with url: search_comics_post_path, method: :post, local: true do |form| %>
   <%= form.text_field :query, placeholder: "Search Comics" %>
   <%= form.submit 'Find Comics' %>
 <% end %>
-
-
-
-
 
 <h2>Search Results</h2>
 
@@ -14,14 +10,15 @@
   <ul>
     <% @comics.each do |comic| %>
       <li>
-        <%= image_tag comic.image_url %>
+        <% if comic.image_url.present? %>
+          <%= image_tag comic.image_url %>
+        <% else %>
+          <p>No image available</p>
+        <% end %>
         <div>
-  <strong><%= comic.name %></strong> - <%= comic.issue_number %> - <%= comic.publisher %>
-<form action="<%= add_to_collection_user_comic_path(current_user, comic) %>" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= button_tag 'Add to Collection', type: 'submit' %>
-</form>
-</div>
+          <strong><%= comic.title %></strong> - <%= comic.issue %> - <%= comic.publisher %>
+          <%= link_to 'Add to Collection', add_to_collection_user_comic_path(@user, comic), method: :post %>
+        </div>
       </li>
     <% end %>
   </ul>

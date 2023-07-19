@@ -7,28 +7,31 @@ class ComicsFacade
     @service = service
   end
 
-  def comics_keyword
+  def comics
     response = service.search_comics(@query_params)
 
-    if response[:status_code] == 101
-      raise CustomError, "Comic not found" 
-    else
-      comics = response[:results].map do |data|
-        existing_comic = Comic.find_by(comic_vine_id: data[:comic_vine_id])
+    raise CustomError, 'Comic not found' if response[:status_code] == 101
 
-        if existing_comic.nil?
-          Comic.create(data)
-        else
-          existing_comic.update(data)
-          existing_comic
-        end
-      end
-
-      comics
+    response[:results].map do |data|
+      create_or_update_comic(data)
     end
   end
 
   def user
     User.find(@user_id)
+  end
+
+  private
+
+  def create_or_update_comic(data)
+    comic = Comic.find_or_initialize_by(comic_vine_id: data[:comic_vine_id])
+    comic.assign_attributes(
+      title: data[:title],
+      issue: data[:issue],
+      publisher: data[:publisher],
+      image_url: data[:image_url]
+    )
+    comic.save
+    comic
   end
 end
