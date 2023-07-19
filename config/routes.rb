@@ -4,13 +4,9 @@ Rails.application.routes.draw do
       get 'login'
     end
 
-    member do
-      get 'discover', to: 'comics#discover', as: 'user_discover_comics'
-    end
-
     resources :comics, only: [:index] do
       member do
-        post 'add_to_collection'
+        post 'add_to_collection', to: 'users#add_to_collection', as: 'add_to_collection'
       end
 
       collection do
@@ -18,6 +14,8 @@ Rails.application.routes.draw do
       end
     end
   end
+ 
+  get '/comics', to: 'comics#index'
 
   post 'discover/search', to: 'comics#search', as: 'search_comics_post'
   match '/logout', to: 'users#logout_user', via: [:get, :post], as: 'logout'
@@ -34,4 +32,3 @@ Rails.application.routes.draw do
   get '/users/:id/discover/search', to: 'comics#search', as: 'user_dashboard_search'
   get '/users/:id/comics', to: 'comics#index'
 end
-

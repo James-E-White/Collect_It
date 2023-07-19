@@ -1004,7 +1004,7 @@
       "/Users/jameswhite/Desktop/apps/Collect_It/Collect_It/app/controllers/users_controller.rb": {
         "lines": [
           1,
-          1,
+          null,
           null,
           1,
           1,
@@ -1140,6 +1140,6 @@
         ]
       }
     },
-    "timestamp": 1689624112
+    "timestamp": 1689624172
   }
 }
