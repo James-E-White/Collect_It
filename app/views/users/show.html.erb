@@ -1,4 +1,4 @@
-<h2 style="text-align:center;"><span class="highlight">Welcome to your Collect It Dashboard</span></h2>
+<h2 style="text-align:center;"><span class="highlight">Welcome to <%= current_user.username %> Collect It Dashboard</span></h2>
 <% if current_user %>
   <%= form_with url: user_dashboard_search_path(@user), method: :get, local: true do |form| %>
     <%= form.text_field :query, placeholder: "Search Comics" %>
