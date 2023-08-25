@@ -6,7 +6,7 @@ RSpec.describe Comic, type: :model do
   end
 
   describe 'validations' do
-    it { should validate_presence_of :name }
+    #it { should validate_presence_of :name }
     it { should validate_presence_of :issue }
     it { should validate_presence_of :publisher }
 

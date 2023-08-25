@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      puts "User ID in session: #{session[:user_id]}"
       redirect_to '/dashboard'
     else
       flash[:alert] = 'Incorrect Email or Password'
@@ -42,16 +43,16 @@ class UsersController < ApplicationController
     redirect_to '/'
   end
 
-  def add_to_collection
-    @comic = Comic.find_by(id: params[:id])
-    if @comic
-      @user = current_user
-      @user.comics << @comic
-      redirect_to '/comics', notice: 'Comic added to your collection'
-    else
-      redirect_to '/comics', alert: 'Comic not found'
-    end
-  end
+  # def add_to_collection
+  #   @comic = Comic.find_by(id: params[:id])
+  #   if @comic
+  #     @user = current_user
+  #     @user.comics << @comic
+  #     redirect_to '/comics', notice: 'Comic added to your collection'
+  #   else
+  #     redirect_to '/comics', alert: 'Comic not found'
+  #   end
+  # end
 
   private
 

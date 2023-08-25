@@ -17,7 +17,9 @@
         <% end %>
         <div>
           <strong><%= comic.title %></strong> - <%= comic.issue %> - <%= comic.publisher %>
-          <%= link_to 'Add to Collection', add_to_collection_user_comic_path(@user, comic), method: :post %>
+          <form action="<%= add_to_collection_comic_path(user_id: current_user.id, id: comic.id) %>" method="post">
+            <%= button_to 'Add to Collection', add_to_collection_comic_path(id: comic.id), method: :post %>
+          </form>
         </div>
       </li>
     <% end %>
